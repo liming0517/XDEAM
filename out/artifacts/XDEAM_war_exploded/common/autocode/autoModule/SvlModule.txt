@@ -1,0 +1,120 @@
+/*
+ * 创建日期 {CreateDate}
+ * Author:{Author}
+ * Description:{FunctionCName}({FunctionEName})
+ * 窗口 > 首选项 > Java > 代码生成 > 代码和注释
+ */
+package {PackageName};
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pantech.base.common.exception.WrongSQLException;
+import com.pantech.base.common.tools.MyTools;
+
+/**
+ * @version 1.0
+ * @author {Author}
+ * {FunctionCName}{FunctionEName}
+ */
+public class Svl_{FunctionEName} extends HttpServlet implements Servlet {
+
+	{FunctionEName}Bean bean;
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+
+	}
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+		
+		String msg = "";
+		
+		bean = new {FunctionEName}Bean(req);
+		//操作类型（add:添加 mod:修改 del:删除）
+		String active=MyTools.StrFiltr(req.getParameter("active"));
+		//根据不同的操作类型执行不同操作
+		this.GetFormData(req);
+		if(active.equalsIgnoreCase("add")){
+			try {
+				bean.AddRec();
+				msg = "信息添加成功";
+			} catch (WrongSQLException e) {
+				e.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e.getMessage());
+				e.printStackTrace();
+				return;
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e1.getMessage());
+				return;
+			}
+		}else if(active.equalsIgnoreCase("mod")){
+			try {
+				bean.ModRec();
+				msg = "信息修改成功";
+			} catch (WrongSQLException e) {
+				e.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e.getMessage());
+				e.printStackTrace();
+				return;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e.getMessage());
+				return;
+			}
+		}else if(active.equalsIgnoreCase("del")){
+			try {
+				bean.RemoveRec();
+				msg = "信息删除成功";
+			} catch (WrongSQLException e) {
+				e.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e.getMessage());
+				e.printStackTrace();
+				return;
+			} catch (SQLException e) {
+				e.printStackTrace();
+				MyTools.GoToErrPage(req,resp,e.getMessage());
+				return;
+			}
+		}
+		
+		//=============手工选择不同的操作方式==============
+		//方式1：希望添加/修改完毕后，将记录传回页面显示的代码
+		String[] param = {"{KeyEName}"};
+		String[] value = {bean.get{KeyEName}()};
+		String url = MyTools.getFormURL(req,param,value);//取得jsp页面地址
+		//方式2：希望添加/修改完毕后，不将记录传回页面显示的代码
+		//String url = MyTools.getFormURL(req);//取得jsp页面地址
+		//------------------------------------------------
+		
+		req.setAttribute("MSG",msg);//操作信息
+		req.setAttribute("URL",url);//页面地址
+		
+		req.getRequestDispatcher(url).forward(req,resp);
+	}
+
+	/**
+	 * 将页面传值赋给BEAN
+	 * @param req
+	 * @return
+	 */
+	private void GetFormData(HttpServletRequest req){
+		{loop}
+		bean.set{QfieldsEName}(MyTools.StrFiltr(req.getParameter("ic{QfieldsEName}")));
+		{loopend}
+	}
+}

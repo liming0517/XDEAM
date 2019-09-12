@@ -1,0 +1,171 @@
+.zhuyao{
+	width:100%;
+	height:650px;
+}
+
+.head{
+	width:50%;
+	height:60px;
+	margin-top:1.6%;
+}
+
+.nr{
+	margin-top:1.5%;
+	width:55%;
+	height:500px;
+	margin-left:4%;
+}
+
+.nr img{
+	margin-top:20px;
+}
+
+.nr a{
+	line-height:40px;
+	font-family:�����п�;
+	font-size:24px;
+	color:#fff;
+	-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;   
+	*filter: Glow(Color=#000, Strength=1);   
+}
+
+.nr b{
+	line-height:10px;
+	font-weight:bolder;
+	font-family:Arial;
+	font-size:12px;
+	color:#fff;
+	-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;  
+	text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;   
+	*filter: Glow(Color=#000, Strength=1);   
+}
+
+.h1{
+	width:100%;
+	height:32%;
+}
+
+.h2{
+	margin-top:2%;
+	width:50%;
+	height:32%;
+}
+
+.h3{
+	margin-top:2%;
+	width:100%;
+	height:32%;
+}
+
+.a{
+	background:#634abe;
+	width:40%;
+	height:100%;
+	float:left;
+}
+
+.b{
+	background:#ac1b3e;
+	margin-left:1%;
+	width:30%;
+	height:100%;
+	float:left;
+}
+
+.c{
+	background:#23c0e6;
+	margin-left:1%;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.d{
+	background:#5152c2;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.e{
+	background:#d12890;
+	margin-left:1%;
+	width:28.5%;
+	height:100%;
+	float:left;
+}
+
+.f{
+	background:#C93;
+	margin-left:1%;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.x{
+	background:#09C;
+	margin-left:0%;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.g{
+	background:#23c0e6;
+	margin-left:1%;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.h{
+	background:#5ba71a;
+	width:28.5%;
+	height:100%;
+	float:left;
+}
+
+.i{
+	background:#197b82;
+	margin-left:0%;
+	width:25%;
+	height:100%;
+	float:left;
+}
+
+.j{
+	background:#0060d4;
+	margin-left:1%;
+	width:45%;
+	height:100%;
+	float:left;
+}
+
+.k{
+	background:#23c0e6;
+	margin-left:1%;
+	width:20%;
+	height:100%;
+	float:left;
+}
+
+.y{
+	background:#7db301;
+	margin-left:1%;
+	width:35%;
+	height:100%;
+	float:left;
+}
+
+.z{
+	/*background:#2c92db;*/
+	background:#CF7871;
+	margin-left:1%;
+	width:35%;
+	height:100%;
+	float:left;
+}

@@ -1,0 +1,605 @@
+BODY{
+	FONT-SIZE: 12px;
+	COLOR: #000000;
+}
+
+.navPoint {
+	FONT-SIZE: 13pt; CURSOR: hand; COLOR: white; FONT-FAMILY: "Webdings"
+}
+
+a:link  { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #006AAA;
+	text-decoration : none;
+}
+a:active  { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #234669;
+	text-decoration : underline;
+}
+a:visited  { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #234669;
+	text-decoration : none;
+}
+a:hover   { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #339900;
+	text-decoration : underline;
+}
+
+
+.talbetitle {
+	font-size: 14px;
+	font-weight: bold;
+	color: #0073B7;
+	font-family: "宋体";
+}
+
+
+
+a.menulink:link  { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #EF2B01;
+	text-decoration : none;
+	text-indent: 12pt;
+}
+a.menulink:active  {
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #EF2B01;
+	text-decoration : underline;
+	text-indent: 12pt;
+
+}
+a.menulink:visited  { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #EF2B01;
+	text-decoration : none;
+	text-indent: 12pt;
+}
+a.menulink:hover   { 
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #0086FF;
+	text-decoration : underline;
+	text-indent: 12pt;
+}
+
+
+
+
+
+
+.menu1 {
+	font-size: 12px;
+	color: #1A004F;
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	
+}
+.menu2 {
+	font-size: 12px;
+	color: #00388C;
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+.content {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 13px;
+	color: #000339;
+	line-height: 22px;
+
+
+
+}
+
+.tablefield {
+	font-size: 14px;
+	color: #0150A7;
+	font-family: "宋体";
+	font-weight: 400;
+	line-height: 26px;
+	text-align: center;
+
+	
+
+
+}
+
+td{
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #000339;
+	line-height: 22px;
+	background-color: #ffffff;
+}
+
+
+input,select{
+ font-size: 12px; line-height: 15px;
+
+}
+Textarea{
+ font-size: 12px;
+ line-height: 15px;
+ 
+}
+
+
+.topbg {
+	background-image: url(../images/top.jpg);
+}
+.bottombg {
+	background-image: url(../images/bottom2.jpg);
+}
+.menubg {
+	background-image: url(../images/menubg.gif);
+}
+.contentbg {
+	background-image: url(/CRM2/css/contentbg.gif);
+}
+.tabletop {
+	/*background-image: url(../images/border_r1_c2.jpg);*/
+	background:url(../images/border_r1_c2.jpg) repeat-x;
+}
+.tableright {
+	background-image: url(../images/border_r2_c4.gif);
+}
+.tableleft {
+	background-image: url(../images/border_r2_c1.gif);
+}
+.tablebottom {
+	background-image: url(../images/border_r3_c2.gif);
+}
+.fieldbg {
+	background-image: url(title_bg.gif);
+	
+
+}
+
+
+.tablestyle {
+	FONT-SIZE: 12px;
+	LINE-HEIGHT: 26px;
+	FONT-FAMILY: "宋体";
+	width: 100%;
+	margin: 1px;
+	padding: 1px;
+	color: #000339;
+	background-position: center center;
+	border-top: 1px outset #86C2FF;
+	border-right: 3px outset #86C2FF;
+	border-bottom: 3px outset #86C2FF;
+	border-left: 1px outset #86C2FF;
+	background-color: #B0D8FF;
+
+	
+	
+
+		
+
+}
+
+
+
+
+.bottomword {
+	font-size: 12px;
+	color: #0058B0;
+
+}
+
+
+
+
+.topmenu {
+	font-size: 12px;
+	color: #D92600;
+	text-indent: 16;
+
+}
+
+.blankmenu {
+	BORDER-RIGHT: rgb(101,149,204) 1px solid; BORDER-TOP: rgb(101,149,204) 1px solid; FONT-SIZE: 13px; BACKGROUND: #f0f7ff; BORDER-LEFT: rgb(101,149,204) 1px solid; BORDER-BOTTOM: rgb(101,149,204) 1px solid
+}
+.tableline {
+	background-color: #FFFFFF;
+	cursor:hand;
+}
+
+.onlinestyle {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.tableborder{
+	
+	
+  background-color: #ABE4FF;
+
+}
+.tableborder2{
+	
+	
+  background-color: #5AD0FF;
+
+}
+
+.trstyle
+{
+	background-color: #CCC;
+	
+}
+
+
+/* CSS Document */
+body,td,th {
+	font-family: "宋体";
+	font-size: 12px;
+	color: #333333;
+}
+.topbg {
+	background-image: url(../images/topbg.gif);
+	background-repeat: repeat-x;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFFFFF;
+}
+.dhbg {
+	background-image: url(../images/dhbg.jpg);
+	height: 35px;
+	background-repeat: repeat-x;
+}
+
+.cuti {
+	font-weight: bold;
+	line-height: 25px;
+}
+
+.height {
+	line-height: 25px;
+	font-size: 12px;
+}
+
+.footbg {
+	background-image: url(../images/footbg.jpg);
+	background-repeat: repeat-x;
+	height: 78px;
+}
+.zt2 {
+	font-size: 18px;
+	font-weight: bold;
+	color: #0555A5;
+	font-family: "宋体";
+}
+.zt {
+	font-size: 14px;
+	font-weight: bold;
+	color: #076BCB;
+}
+
+
+.bk {
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #ABE4FF;
+	border-bottom-color: #ABE4FF;
+	border-left-color: #ABE4FF;
+}
+.dhzt {
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.height2 {
+	line-height: 25px;
+}
+.bg3 {
+	background-image: url(../images/bg3.gif);
+	background-repeat: repeat-x;
+	font-family: "华文新魏";
+	font-size: 18px;
+	font-weight: bold;
+	color: #FF0000;
+	height: 50px;
+}
+
+.bg {
+	background-image: url(../images/bg.gif);
+	background-repeat: repeat-x;
+	line-height: 25px;
+	font-weight: bold;
+}
+
+
+.STYLE1 {color: #0099FF}
+.bg2 {
+	background-image: url(../images/bg2.gif);
+	background-repeat: repeat-x;
+	height: 28px;
+	padding-left: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding-right: 10px;
+}
+
+.STYLE2 {color: #FF0000}
+
+.STYLE3 {font-size: 16px}
+
+img{
+	cursor: hand;
+}
+
+.textname {
+	font-weight: bold;
+	/*line-height: 25px;*/
+	padding-left: 10px;
+}
+
+.tdstyle{
+	line-height: 25px;
+	padding-left: 10px;
+}
+
+.fjbg {
+	background-image: url(../images/bj3.gif);
+	background-repeat: repeat-y;
+	background-position: left;
+}
+  
+  
+body {  
+background: #FFF;  
+color: #000;  
+font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif;  
+padding: 0  
+}  
+
+table, td, a {  
+color: #000;  
+font: normal normal 12px Verdana, Geneva, Arial, Helvetica, sans-serif  
+}  
+
+.td  
+{  
+nowrap:鈥欌??檛rue鈥欌????  
+}  
+
+div.tableContainer {  
+clear: both;  
+height: 285px;  
+overflow: auto;  
+width: 100%;  
+}  
+
+/* WinIE 6.x needs to re-account for it鈥欌??檚 scrollbar. Give it some padding */  
+\html div.tableContainer/* */ {  
+padding: 0 16px 0 0  
+}  
+
+/* clean up for allowing display Opera 5.x/6.x and MacIE 5.x */  
+html>body div.tableContainer {  
+height: auto;  
+padding: 0
+}  
+
+/* Reset overflow value to hidden for all non-IE browsers. */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body div[class].tableContainer {  
+height: 285px;  
+overflow: hidden;  
+width: 756px  
+}  
+
+/* define width of table. IE browsers only */  
+/* if width is set to 100%, you can remove the width */  
+/* property from div.tableContainer and have the div scale */  
+div.tableContainer table {  
+float: left;  
+width: 100%  
+}  
+
+/* WinIE 6.x needs to re-account for padding. Give it a negative margin */  
+\html div.tableContainer table/* */ {  
+margin: 0 -16px 0 0  
+}  
+
+/* define width of table. Opera 5.x/6.x and MacIE 5.x */  
+html>body div.tableContainer table {  
+float: none;  
+margin: 0
+}  
+
+/* define width of table. Add 16px to width for scrollbar. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body div[class].tableContainer table {  
+width: 756px  
+}  
+
+/* set table header to a fixed position. WinIE 6.x only */  
+/* In WinIE 6.x, any element with a position property set to relative and is a child of */  
+/* an element that has an overflow property set, the relative value translates into fixed. */  
+/* Ex: parent element DIV with a class of tableContainer has an overflow property set to auto */  
+thead.fixedHeader tr {  
+position: relative;  
+/* expression is for WinIE 5.x only. Remove to validate and for pure CSS solution */  
+top: expression(document.getElementById("tableContainer").scrollTop)  
+}  
+thead.fixedHeader2 tr {  
+position: relative;  
+/* expression is for WinIE 5.x only. Remove to validate and for pure CSS solution */  
+bottom: expression(document.getElementById("tableContainer").scrollHeight > document.getElementById("tableContainer").clientHeight ? document.getElementById("tableContainer").scrollHeight - document.getElementById("tableContainer").scrollTop - document.getElementById("tableContainer").clientHeight :0)  
+}  
+
+/* set THEAD element to have block level attributes. All other non-IE browsers */  
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body thead[class].fixedHeader tr {  
+display: block  
+}  
+
+/* make the TH elements pretty */  
+thead.fixedHeader th {
+	font-weight: bold;
+	background-image: url(/CRM2/css/bg3.gif);
+	background-repeat: repeat-x;
+	height: 31px;
+}  
+/* make the TH elements pretty */  
+thead.fixedHeader2 th {  
+background: #C96;  
+border-left: 1px solid #EB8;  
+border-right: 1px solid #B74;  
+border-top: 1px solid #EB8;  
+font-weight: normal;  
+padding: 4px 3px;  
+text-align: left  
+}  
+/* make the A elements pretty. makes for nice clickable headers */  
+thead.fixedHeader a, thead.fixedHeader a:link, thead.fixedHeader a:visited {  
+color: #FFF;  
+display: block;  
+text-decoration: none;  
+width: 100%  
+}  
+thead.fixedHeader2 a, thead.fixedHeader2 a:link, thead.fixedHeader a:visited {  
+color: #FFF;  
+display: block;  
+text-decoration: none;  
+width: 100%  
+}  
+
+/* make the A elements pretty. makes for nice clickable headers */  
+/* WARNING: swapping the background on hover may cause problems in WinIE 6.x */  
+thead.fixedHeader a:hover {  
+color: #FFF;  
+display: block;  
+text-decoration: underline;  
+width: 100%  
+}  
+
+/* define the table content to be scrollable */  
+/* set TBODY element to have block level attributes. All other non-IE browsers */  
+/* this enables overflow to work on TBODY element. All other non-IE, non-Mozilla browsers */  
+/* induced side effect is that child TDs no longer accept width: auto */  
+/* Filter out Opera 5.x/6.x and MacIE 5.x */  
+head:first-child+body tbody[class].scrollContent {  
+display: block;  
+height: 262px;  
+overflow: auto;  
+width: 100%  
+}  
+
+/* make TD elements pretty. Provide alternating classes for striping the table */  
+/* http://www.alistapart.com/articles/zebratables/ */  
+tbody.scrollContent td, tbody.scrollContent tr.normalRow td {  
+background: #FFF;  
+padding: 2px 3px  
+}  
+
+tbody.scrollContent tr.alternateRow td {  
+background: #EEE;  
+border-bottom: 1px solid #EEE;  
+border-left: 1px solid #EEE;  
+border-right: 1px solid #AAA;  
+border-top: 1px solid #AAA;  
+padding: 2px 3px  
+}  
+
+/* define width of TH elements: 1st, 2nd, and 3rd respectively. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+/* Add 16px to last TH for scrollbar padding */  
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors */  
+head:first-child+body thead[class].fixedHeader th {  
+width: 200px  
+}  
+
+head:first-child+body thead[class].fixedHeader th + th {  
+width: 250px  
+}  
+
+head:first-child+body thead[class].fixedHeader th + th + th {  
+border-right: none;  
+padding: 4px 4px 4px 3px;  
+width: 316px  
+}  
+
+/* define width of TH elements: 1st, 2nd, and 3rd respectively. */  
+/* All other non-IE browsers. Filter out Opera 5.x/6.x and MacIE 5.x */  
+/* Add 16px to last TH for scrollbar padding */  
+/* http://www.w3.org/TR/REC-CSS2/selector.html#adjacent-selectors */  
+head:first-child+body tbody[class].scrollContent td {  
+width: 200px  
+}  
+
+head:first-child+body tbody[class].scrollContent td + td {  
+width: 250px  
+}  
+
+head:first-child+body tbody[class].scrollContent td + td + td {  
+border-right: none;  
+padding: 2px 4px 2px 3px;  
+width: 300px  
+
+/* expression is for WinIE 5.x only. Remove to validate and for pure CSS solution */  
+top: expression(document.getElementById("tableContainer").scrollTop)  
+}  
+.table_title {
+	background: #FFF;
+	font-weight: bold;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #AFE5FF;
+	border-right-color: #AFE5FF;
+	border-bottom-color: #AFE5FF;
+}    
+.table_title_left {
+	background: #FFF;
+	font-weight: bold;
+	border: 1px solid #AFE5FF;
+}      
+.tr_bk {
+	background: #FFF;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-right-color: #AFE5FF;
+	border-bottom-color: #AFE5FF;
+	padding: 2px 3px 
+}    
+.tr_left {
+	background: #FFF;
+	padding: 2px 3px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #AFE5FF;
+	border-bottom-color: #AFE5FF;
+	border-left-color: #AFE5FF;
+}      

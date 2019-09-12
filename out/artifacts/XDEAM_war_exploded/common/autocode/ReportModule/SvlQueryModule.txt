@@ -1,0 +1,108 @@
+package {PackageName};
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pantech.base.common.db.DBSource;
+import com.pantech.base.common.tools.MyTools;
+import com.pantech.base.common.tools.TraceLog;
+
+/**
+ * @version 1.0
+ * @author {Author}
+ * 创建时间 {CreateDate}
+ * 功能：{FunctionCName}({FunctionEName})
+ */
+public class Svl_{FunctionEName}Query extends HttpServlet implements Servlet {
+
+	{FunctionEName}QueryBean {FunctionSimpleEName}qb;
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+
+	}
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+		
+		DBSource db = new DBSource();
+		String sqlServName = "";
+		String strTrValue = "";
+		Vector vecServTemp = new Vector();
+		Vector vecServTemp1 = new Vector();
+
+		//获取界面操作变量
+		String active=MyTools.StrFiltr(req.getParameter("active"));
+		
+		if(active.equalsIgnoreCase("query")){
+			//查询操作
+			{FunctionSimpleEName}qb=new {FunctionEName}QueryBean();
+			this.getFormData(req);
+
+			try{
+				//-----------------------------生成统计报表的头标题-----------------------------//
+				if(!qb.getServName().equals("")){
+					sqlServName = "SELECT DISTINCT 类别名称 FROM {TableName} WHERE 服务类别 IN " + MyTools.GenerQueryCon(MyTools.splitStrToVector(qb.getServName(),","));
+					vecServTemp = db.GetContextVector(sqlServName);
+					strTrValue = qb.getTrVal(vecServTemp);
+				} else {
+					sqlServName = "SELECT DISTINCT 服务类别 FROM {TableName}";
+					vecServTemp = db.GetContextVector(sqlServName);
+					sqlServName = "SELECT DISTINCT 类别名称 FROM {TableName} WHERE 服务类别 IN " + MyTools.GenerQueryCon(vecServTemp);
+					vecServTemp1 = db.GetContextVector(sqlServName);
+					strTrValue = qb.getTrVal(vecServTemp1);
+				}
+			
+				TraceLog.Trace("the title value is=====================[" + strTrValue + "]");
+			
+				//-----------------------------生成统计报表的头标题-----------------------------//				
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}	
+
+			Vector v = new Vector();
+			try {
+				v = qb.get{FunctionEName}Query();
+			} catch (SQLException e1) {
+				// TODO 自动生成 catch 块
+				e1.printStackTrace();
+			}
+			req.setAttribute("QueryBean",qb);
+			req.setAttribute("{FunctionEName}Query",v);
+			req.setAttribute("Head",strTrValue);
+		}
+		
+		//=============手工选择不同的操作方式==============
+		//方式1：希望添加/修改完毕后，将记录传回页面显示的代码
+		//String[] param = {""};
+		//String[] value = {""};
+		//String url = MyTools.getFormURL(req,param,value);//取得jsp页面地址
+		//方式2：希望添加/修改完毕后，不将记录传回页面显示的代码
+		String url = MyTools.getFormURL(req);//取得jsp页面地址
+		//------------------------------------------------
+		req.setAttribute("URL",url);
+		req.getRequestDispatcher(url).forward(req,resp);
+	}
+
+	/**
+	* 获取界面变量
+	*/
+	private void getFormData(HttpServletRequest req){
+		{loop}
+		{FunctionSimpleEName}qb.set{QfieldsEName}(MyTools.StrFiltr(req.getParameter("ic{QfieldsEName}")));
+		{loopend}
+	}
+}

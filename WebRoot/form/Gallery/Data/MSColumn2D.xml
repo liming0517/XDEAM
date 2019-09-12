@@ -1,0 +1,30 @@
+﻿<chart palette='2' caption='各班男女数量统计' shownames='1' showvalues='0' decimals='0' numberPrefix='' useRoundEdges='1' legendBorderAlpha='0'>
+<categories>
+<category label='1301班' />
+<category label='1302班' />
+<category label='1303班' />
+<category label='1304班' />
+<category label='1305班' />
+</categories>
+<dataset seriesName='男生数量' color='AFD8F8' showValues='0'>
+<set value='50' />
+<set value='40' />
+<set value='33' />
+<set value='45' />
+<set value='30' />
+</dataset>
+<dataset seriesName='女生数量' color='F6BD0F' showValues='0'>
+<set value='10' />
+<set value='20' />
+<set value='27' />
+<set value='15' />
+<set value='20' />
+</dataset>
+<dataset seriesName='总人数' color='8BBA00' showValues='0'>
+<set value='60' />
+<set value='60' />
+<set value='60' />
+<set value='60' />
+<set value='50' />
+</dataset>
+</chart>

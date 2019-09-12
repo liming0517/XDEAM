@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="ru-RU">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="build/kalendae.css" type="text/css" charset="utf-8">
+<!-- <script src="src/moment.js" type="text/javascript" charset="utf-8"></script>
+	<script src="build/kalendae.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="build/kalendae.standalone.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css" media="screen">
+		.kalendae .k-days span.closed {
+			background:red;
+		}
+	</style>
+</head>
+<body>
+	 <input type="text"  id="input0" style="width:520px">
+	<script type="text/javascript" charset="utf-8">
+		
+		var picker = new Kalendae.Input('input0',{
+			//attachTo:document.body,
+			months:3,
+			mode:'multiple',
+			direction:'future',
+			multipleDelimiter:',',
+			format:'YYYY-MM-DD',
+			titleFormat:'YYYY,MM',
+		});
+		//alert(picker.getSelectedAsText());
+
+
+	</script>
+
+	
+
+</body>
+</html>

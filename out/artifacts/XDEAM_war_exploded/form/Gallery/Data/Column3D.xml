@@ -1,0 +1,11 @@
+﻿<chart caption='2013出勤率统计' xAxisName='班级' yAxisName='出勤率%' showValues='0' decimals='0' formatNumberScale='0'>
+<set label='1301班' value='98' />
+<set label='1302班' value='99' />
+<set label='1303班' value='95' />
+<set label='1304班' value='94' />
+<set label='1305班' value='98' />
+<set label='1306班' value='96' />
+<set label='1307班' value='93' />
+<set label='1308班' value='94' />
+<set label='1309班' value='90' />
+</chart>	

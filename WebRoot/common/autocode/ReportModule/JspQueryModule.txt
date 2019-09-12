@@ -1,0 +1,121 @@
+<%
+//@author {Author}
+//@createdate {CreateDate}
+//功能名：{FunctionCName}({FunctionEName})
+%>
+
+<%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
+<%@ page import="com.pantech.src.develop.common.Cls_CommonHtmlData"%>
+<%@ page import="java.util.Vector"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="com.pantech.base.common.tools.MyTools"%>
+<%@ page import="com.pantech.base.common.tags.util.PagerInfo"%>
+<%@ page import="{PackageName}.{FunctionEName}Bean"%>
+<%@ page import="{PackageName}.{FunctionEName}QueryBean"%>
+<%@ taglib uri="/WEB-INF/taglib/util.tld" prefix="util"%>
+<%@ taglib uri="/WEB-INF/taglib/securityTag.tld" prefix="security"%>
+
+<jsp:useBean class="com.pantech.base.common.tags.security.PurViewTools" id="pc" scope="page" />
+<%String mcode = pc.GetModuleCodeFromUrl(request);%>
+<security:securityForPage pagePermissionID="<%=mcode%>">
+
+<%
+	//页面通用HTML代码输出类定义
+	Cls_CommonHtmlData cchd=new Cls_CommonHtmlData(request.getContextPath());
+	//选择用参数
+	/****active动作标记****/
+	String active=MyTools.StrFiltr(request.getParameter("active"));
+	/****cType选择类型(1 radio 2 checkbox 默认1)****/
+	String cType=MyTools.StrFiltr(request.getParameter("cType"));
+	/****cId返回值界面的元素名****/
+	String cId=MyTools.StrFiltr(request.getParameter("cid"));
+	/****cValue返回值界面的form1中的active值****/
+	String cValue=MyTools.StrFiltr(request.getParameter("cvalue"));
+	/****cSubmit是否返回提交form1****/
+	String cSubmit=MyTools.StrFiltr(request.getParameter("cSubmit"));
+	//获取由Servlet处理后的结果集
+	Vector vec=new Vector();
+	if(request.getAttribute("{FunctionEName}Query")!=null){
+		vec = (Vector)request.getAttribute("{FunctionEName}Query");
+	}
+	//QueryBean
+	{FunctionEName}QueryBean {FunctionSimpleEName}qb=new {FunctionEName}QueryBean();
+	if(request.getAttribute("QueryBean")!=null){
+		qb = ({FunctionEName}QueryBean)request.getAttribute("QueryBean");
+	}
+
+	String sql = {FunctionSimpleEName}qb.getSqlstate();
+	//列标题
+	String head = "";
+	if (request.getAttribute("Head") != null) {
+		head = (String)request.getAttribute("Head");
+	}
+	//记录JSP地址
+	String url = "";
+	if(request.getAttribute("URL")!=null){
+		url = (String)request.getAttribute("URL");
+	}else{
+		url = request.getRequestURL().toString();
+	}
+%>
+<script language="JavaScript"
+	src="<%=request.getContextPath()%>/script/VerifyForm.js"></script>
+<script language="JavaScript"
+	src="<%=request.getContextPath()%>/script/meizzDate.js"></script>
+<script>
+	function dosubmit(){
+		if(validateForm(document.form1)){
+			document.all.active.value="query";
+			document.form1.submit();
+		}
+	}
+	function doPrint(){	
+		document.form1.target = "_blank";
+		document.form1.action = "<%=request.getContextPath()%>/form/Functions/PrintControl.jsp";
+		document.form1.submit();
+		document.form1.target = "";
+		document.form1.action = "<%=request.getContextPath()%>/Svl_{FunctionEName}Query";
+	}
+	function doselect(){
+		
+	}
+</script>
+
+<%out.print(cchd.setHtmlTop("{FunctionCName}查询"));//页面头部分%>
+<%out.print(cchd.setBodyTop());%>
+<form name="form1" method="post" action="<%=request.getContextPath()%>/Svl_{FunctionEName}Query">
+<%out.print(cchd.setTableTop("{FunctionCName}查询"));%>
+
+<table width="100%" border="0" cellspacing="1" class="tableborder" cellpadding="0">
+	{FieldsMeta}
+	<tr class="trstyle">
+		<td colspan="<%=[FieldsMetaNum]*2%>" align="center">
+			<input type="button" value=" 查询 " onclick="dosubmit()">
+			<input type="button" value=" 打印 " onclick="doPrint()"> 
+			<input type="hidden" name="active" value="">
+			<input type="hidden" name="sqlstate" value="<%=sql%>">
+		</td>
+	</tr>
+</table>
+<%out.print(cchd.setTableBottom());%>
+
+<div align="center">查询结果</div>
+<table width="100%" class="tablestyle" cellspacing="1" cellpadding="0">
+	<%out.print(head);%>
+	<%for(int i=0;i<vec.size();i+={DfieldsSize}){%>
+	<tr align="center" bgcolor="#FFFFFF" style="cursor: hand" onmouseover="this.style.background='#E5FFDE'" onmouseout="this.style.background='#FFFFFF'">
+		{loop}<td><%=MyTools.convertChar(MyTools.ObjFiltr(vec.get(i+{auto})))%></td>
+		{loopend}
+	</tr>
+	<%}%>
+	<tr style="display:none">
+		<td><input type="hidden" name="ReqUrl" value="<%=url%>"></td>
+	</tr>
+</table>
+</form>
+<%out.print(cchd.setHtmlBottom());//页面尾部分%>
+</security:securityForPage>

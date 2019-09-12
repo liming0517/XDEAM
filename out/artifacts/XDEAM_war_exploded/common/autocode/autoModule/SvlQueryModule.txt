@@ -1,0 +1,70 @@
+package {PackageName};
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.pantech.base.common.tools.MyTools;
+
+/**
+ * @version 1.0
+ * @author {Author}
+ * 创建时间 {CreateDate}
+ * 功能：{FunctionCName}({FunctionEName})
+ */
+public class Svl_{FunctionEName}Query extends HttpServlet implements Servlet {
+
+	{FunctionEName}QueryBean {FunctionSimpleEName}qb;
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doGet(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+
+	}
+
+	/**
+	* @see javax.servlet.http.HttpServlet#void (javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	*/
+	public void doPost(HttpServletRequest req, HttpServletResponse resp)
+		throws ServletException, IOException {
+		
+		//获取界面操作变量
+		String active=MyTools.StrFiltr(req.getParameter("active"));
+		
+		if(active.equalsIgnoreCase("query")){
+			//查询操作
+			{FunctionSimpleEName}qb=new {FunctionEName}QueryBean(req);
+			this.getFormData(req);
+			ArrayList arr={FunctionSimpleEName}qb.get{FunctionEName}Query(MyTools.StrFiltr(req.getParameter("PageNum")));
+			arr.add(3,{FunctionSimpleEName}qb);
+			req.setAttribute("{FunctionEName}Query",arr);
+		}
+		
+		//=============手工选择不同的操作方式==============
+		//方式1：希望添加/修改完毕后，将记录传回页面显示的代码
+		//String[] param = {""};
+		//String[] value = {""};
+		//String url = MyTools.getFormURL(req,param,value);//取得jsp页面地址
+		//方式2：希望添加/修改完毕后，不将记录传回页面显示的代码
+		String url = MyTools.getFormURL(req);//取得jsp页面地址
+		//------------------------------------------------
+		req.setAttribute("URL",url);
+		req.getRequestDispatcher(url).forward(req,resp);
+	}
+
+	/**
+	* 获取界面变量
+	*/
+	private void getFormData(HttpServletRequest req){
+		{loop}
+		{FunctionSimpleEName}qb.set{QfieldsEName}(MyTools.StrFiltr(req.getParameter("ic{QfieldsEName}")));
+		{loopend}
+	}
+}

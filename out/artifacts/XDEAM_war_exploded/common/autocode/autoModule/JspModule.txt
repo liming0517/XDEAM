@@ -1,0 +1,107 @@
+<!-- 
+编写人员：{Author}
+页面作用：{FunctionCName}({FunctionEName})
+创建日期：{CreateDate}
+ -->
+<%@ page 
+language="java"
+contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"
+%>
+<%@ page import="com.pantech.src.develop.common.Cls_CommonHtmlData"%>
+<%@ page import="com.pantech.base.common.tools.MyTools" %>
+<%@ page import="{PackageName}.{FunctionEName}Bean" %>
+<%@ taglib uri="/WEB-INF/taglib/util.tld" prefix="util"%>
+<%
+	//页面头生成类
+	Cls_CommonHtmlData cchd=new Cls_CommonHtmlData(request.getContextPath());
+	//主键
+	String {KeyEName} = MyTools.StrFiltr(request.getParameter("{KeyEName}"));
+	//模式：编辑edit 详细view
+	String mode=MyTools.StrFiltr(request.getParameter("mode"));
+	//操作提示信息
+  	String msg = "";
+	if(request.getAttribute("MSG")!=null){
+		msg = (String)request.getAttribute("MSG");
+		request.removeAttribute("MSG");
+	}
+	//记录JSP地址
+	String url = "";
+	if(request.getAttribute("URL")!=null){
+		url = (String)request.getAttribute("URL");
+	}else{
+		url = request.getRequestURL().toString();
+	}
+	//记录维护BEAN
+	{FunctionEName}Bean {FunctionSimpleEName}qb = new {FunctionEName}Bean({KeyEName},request);
+	
+%>
+<script language="JavaScript"
+	src="<%=request.getContextPath()%>/script/VerifyForm.js"></script>
+<script language="JavaScript"
+	src="<%=request.getContextPath()%>/script/meizzDate.js"></script>
+<SCRIPT language="JavaScript">
+
+function chkVal(){
+	//函数功能：为前台数据是否为空的校验，默认全部不允许为空，允许程序员自行对其进行修改。
+	{loop}
+	if(document.form1.ic{QfieldsEName}.value.length < 1){
+		alert("{QfieldsCName}不能为空!!请重新填写!!");
+		document.form1.ic{QfieldsEName}.focus();
+		return false;
+	}
+	{loopend}
+	return true;
+}
+
+function doSubmit(val){
+	if(val=="del"){
+		document.form1.active.value = val;
+		document.form1.submit();
+	}else{
+		if(validateForm(document.form1)){
+			if(chkVal()){
+				document.form1.active.value = val;
+				document.form1.submit();
+			}
+		}
+	}
+}
+</SCRIPT>
+
+<jsp:useBean class="com.pantech.base.common.tags.security.PurViewTools" id="pc" scope="page" />
+<%@ taglib uri="/WEB-INF/taglib/securityTag.tld" prefix="security"%>
+<%
+String mcode = pc.GetModuleCodeFromUrl(request);
+%>
+<security:securityForPage pagePermissionID="<%=mcode%>">
+
+<%out.print(cchd.setHtmlTop("{FunctionCName}"));//页面头部分%>
+<%out.print(cchd.setBodyTop());%>
+<%out.print(cchd.setTableTop("{FunctionCName}   <font color='red'>" + msg + "</font>"));%>
+
+<form action="<%=request.getContextPath()%>/Svl_{FunctionEName}" method="Post" name="form1">
+
+<TABLE width="100%" cellpadding="0" cellspacing="1" class="tableborder">
+	{FieldsMeta}
+	<tr class="trstyle">
+		<td colspan="<%=[FieldsMetaNum]*2%>" align="center">&nbsp;</td>
+	</tr>
+	<%if(!mode.equalsIgnoreCase("view")){%>
+	<tr class="trstyle">
+		<td colspan="<%=[FieldsMetaNum]*2%>" align="center">
+			<INPUT type="button" name="add" value="添加" onClick="doSubmit(this.name);">
+		<%if(!{KeyEName}.equals("")){%>
+			<INPUT type="button" name="mod" value="修改" onClick="doSubmit(this.name);">
+			<INPUT type="button" name="del" value="删除" onClick="doSubmit(this.name);">
+		<%}%>
+			<INPUT type="hidden" name="active">
+			<INPUT type="hidden" name="ReqUrl" value="<%=url%>">
+		</td>
+	</tr>
+	<%}%>
+</table>
+
+</form>
+<%out.print(cchd.HtmlBottom());//页面尾部分%>
+</security:securityForPage>

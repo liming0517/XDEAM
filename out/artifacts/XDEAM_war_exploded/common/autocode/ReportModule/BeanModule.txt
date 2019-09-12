@@ -1,0 +1,63 @@
+/*
+ * 创建日期 {CreateDate}
+ * Author:{Author}
+ * Description:{FunctionCName}({FunctionEName})
+ * 窗口 > 首选项 > Java > 代码生成 > 代码和注释
+ */
+package {PackageName};
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import com.pantech.base.common.db.DBSource;
+import com.pantech.base.common.exception.WrongSQLException;
+import com.pantech.base.common.tools.MyTools;
+import com.pantech.base.common.tools.TraceLog;
+
+
+/**
+ * @version 	1.0
+ * @author {Author}
+ * {FunctionCName}{FunctionEName}
+ */
+public class {FunctionEName}Bean {
+
+	{loop}private String {QfieldsEName};//{QfieldsCName}
+	{loopend}
+	
+
+	//不带主键的构造函数
+	public {FunctionEName}Bean(){
+		this.InitialData();
+	}
+	
+	/**
+	 * 初始化Bean
+	 */
+	private void InitialData() {
+		{loop}this.set{QfieldsEName}("");
+		{loopend}
+	}
+
+	{loop}
+	/**
+	 * 取得{QfieldsCName}
+	 * @return
+	 */
+	public String get{QfieldsEName}() {
+		return {QfieldsEName};
+	}
+	
+	/**
+	 * 为{QfieldsCName}赋值
+	 * @param string
+	 */
+	public void set{QfieldsEName}(String string) {
+		{QfieldsEName} = string;
+	}
+	{loopend}
+}

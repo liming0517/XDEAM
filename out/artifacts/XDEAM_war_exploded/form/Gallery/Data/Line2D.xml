@@ -1,0 +1,27 @@
+﻿<chart caption='生源构成分析' subcaption='2013年度' xAxisName='省市' yAxisName='学生数量' yAxisMinValue='999'  numberPrefix='' showValues='0' alternateHGridColor='FCB541' alternateHGridAlpha='20' divLineColor='FCB541' divLineAlpha='50' canvasBorderColor='666666' baseFontColor='666666' lineColor='FCB541'>
+	<set label='上海' value='990' />
+	<set label='江苏' value='100' />
+	<set label='浙江' value='50' />
+	<set label='安徽' value='80' />
+	<set label='江西' value='10' />
+	<set label='新疆' value='100' />
+	<set label='甘肃' value='6' />
+	<set label='天津' value='180' />
+	<set label='北京' value='120' />
+	<set label='黑龙江' value='10' />
+	
+
+	<styles>
+		<definition>
+			<style name='Anim1' type='animation' param='_xscale' start='0' duration='1' />
+			<style name='Anim2' type='animation' param='_alpha' start='0' duration='0.6' />
+			<style name='DataShadow' type='Shadow' alpha='40'/>
+		</definition>
+		<application>
+			<apply toObject='DIVLINES' styles='Anim1' />
+			<apply toObject='HGRID' styles='Anim2' />
+			<apply toObject='DATALABELS' styles='DataShadow,Anim2' />
+	</application>	
+	</styles>
+
+</chart> 

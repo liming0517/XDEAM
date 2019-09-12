@@ -1,0 +1,757 @@
+.icon-blank{
+	background:url('icons/blank.gif') no-repeat center center;
+}
+.icon-add{
+	background:url('icons/edit_add.png') no-repeat center center;
+}
+.icon-edit{
+	background:url('icons/pencil.png') no-repeat center center;
+}
+.icon-clear{
+	background:url('icons/clear.png') no-repeat center center;
+}
+.icon-remove{
+	background:url('icons/edit_remove.png') no-repeat center center;
+}
+.icon-save{
+	background:url('icons/filesave.png') no-repeat center center;
+}
+.icon-cut{
+	background:url('icons/cut.png') no-repeat center center;
+}
+.icon-ok{
+	background:url('icons/ok.png') no-repeat center center;
+}
+.icon-no{
+	background:url('icons/no.png') no-repeat center center;
+}
+.icon-cancel{
+	background:url('icons/cancel.png') no-repeat center center;
+}
+.icon-reload{
+	background:url('icons/reload.png') no-repeat center center;
+}
+.icon-search{
+	background:url('icons/search.png') no-repeat center center;
+}
+.icon-print{
+	background:url('icons/print.png') no-repeat center center;
+}
+.icon-help{
+	background:url('icons/help.png') no-repeat center center;
+}
+.icon-undo{
+	background:url('icons/undo.png') no-repeat center center;
+}
+.icon-redo{
+	background:url('icons/redo.png') no-repeat center center;
+}
+.icon-back{
+	background:url('icons/back.png') no-repeat center center;
+}
+.icon-sum{
+	background:url('icons/sum.png') no-repeat center center;
+}
+.icon-tip{
+	background:url('icons/tip.png') no-repeat center center;
+}
+.icon-filter{
+	background:url('icons/filter.png') no-repeat center center;
+}
+.icon-man{
+	background:url('icons/man.png') no-repeat center center;
+}
+.icon-lock{
+	background:url('icons/lock.png') no-repeat center center;
+}
+
+
+.icon-mini-add{
+	background:url('icons/mini_add.png') no-repeat center center;
+}
+.icon-mini-edit{
+	background:url('icons/mini_edit.png') no-repeat center center;
+}
+.icon-mini-refresh{
+	background:url('icons/mini_refresh.png') no-repeat center center;
+}
+
+.icon-large-picture{
+	background:url('icons/large_picture.png') no-repeat center center;
+}
+.icon-large-clipart{
+	background:url('icons/large_clipart.png') no-repeat center center;
+}
+.icon-large-shapes{
+	background:url('icons/large_shapes.png') no-repeat center center;
+}
+.icon-large-smartart{
+	background:url('icons/large_smartart.png') no-repeat center center;
+}
+.icon-large-chart{
+	background:url('icons/large_chart.png') no-repeat center center;
+}
+.icon-new{	/*鏂板�*/
+	background:url('icons/new.gif') no-repeat;
+}
+.icon-add{/*娣诲�*/
+	background:url('icons/edit_add.png') no-repeat;
+}
+.icon-edit{/*缂栬�*/
+	background:url('icons/pencil.png') no-repeat;
+}
+.icon-remove{	/*绉婚�*/
+	background:url('icons/edit_remove.png') no-repeat;
+}
+.icon-save{	/*淇濆�*/
+	background:url('icons/filesave.png') no-repeat;
+}
+.icon-cut{	/*鍓�*/
+	background:url('icons/cut.png') no-repeat;
+}
+.icon-submit{	/*鎻愪�*/
+	background: url(icons/plan_go.png) no-repeat;
+}
+.icon-synchronization{
+	background: url(icons/planchoose.png) no-repeat;
+}
+.icon-download{	/*涓嬭�*/
+	background:url('icons/85.png') no-repeat;
+}
+.icon-ok{	/*纭�*/
+	background:url('icons/ok.png') no-repeat;
+}
+.icon-no{	/*鍚﹀�*/
+	background:url('icons/no.png') no-repeat;
+}
+.icon-cancel{	/*鍙栨�*/
+	background:url('icons/cancel.png') no-repeat;
+}
+.icon-reload{	/*鍒锋�*/
+	background:url('icons/reload.png') no-repeat;
+}
+.icon-search{	/*鏌ユ�*/
+	background:url('icons/search.png') no-repeat;
+}
+.icon-print{	/*鎵撳�*/
+	background:url('icons/print.png') no-repeat;
+}
+.icon-help{	/*甯�*/
+	background:url('icons/help.png') no-repeat;
+}
+
+.icon-undo{	/*鍚戝墠鎾ら攢*/
+	background:url('icons/undo.png') no-repeat;
+}
+.icon-redo{	/*鍚戝悗鎾ら攢*/
+	background:url('icons/redo.png') no-repeat;
+}
+.icon-back{	/*杩斿�*/
+	background:url('icons/back.png') no-repeat;
+}
+.icon-site{	/*璁剧�*/
+	background:url('icons/279.png') no-repeat;
+}
+.icon-jx{/*鏁欏�*/
+	background:url('icons/4.png') no-repeat;
+}
+.icon-sx{/*瀹炶�*/
+	background:url('icons/238.png') no-repeat;
+}
+.icon-zhsx{/*缁煎悎�*炶*/
+	background:url('icons/320.png') no-repeat;
+}
+.icon-newsx{/*鏂板疄璁�锟�*/
+	background:url('icons/143.png') no-repeat;
+}
+.icon-resx{/*缁х画涓婃�*炶*/
+	background:url('icons/155.png') no-repeat;
+}
+.icon-rwsm{/*浠诲姟璇存槑*/
+	background:url('icons/279.png') no-repeat;
+}
+.icon-df{/*寰楀垎鏌ョ湅*/
+	background:url('icons/106.png') no-repeat;
+}
+.icon-begin{/*寮�锟�濮�锟�*/
+	background:url('icons/561.png') no-repeat;
+}
+.icon-end{/*缁撴�*/
+	background:url('icons/597.png') no-repeat;
+}
+.icon-zy{/*浣滀笟鎯呭喌*/
+	background:url('icons/299.png') no-repeat;
+}
+.icon-hd{/*浜掑�*/
+	background:url('icons/199.png') no-repeat;
+}
+.icon-pj{/*璇勪�*/
+	background:url('icons/549.png') no-repeat;
+}
+.icon-sk{/*涓婅�*/
+	background:url('icons/280.png') no-repeat;
+}
+.icon-bf{/*鎾�*/
+	background:url('icons/bf.png') no-repeat;
+}
+.icon-pd{/*鍚�*/
+	background:url('icons/206.png') no-repeat;
+}
+.icon-ktlx{/*寮�锟�濮嬭鍫傜粌涔�锟�*/
+	background:url('icons/174.png') no-repeat;
+}
+.icon-lb{/*褰曟�*/
+	background:url('icons/63.png') no-repeat;
+}
+.icon-finish{/*宸插畬鎴�锟�*/
+	background:url('icons/114.png') no-repeat;
+}
+.icon-unfinish{/*鏈畬鎴�锟�*/
+	background:url('icons/544.png') no-repeat;
+}
+.icon-ktlx{/*璇惧爞缁冧範*/
+	background:url('icons/174.png') no-repeat;
+}
+.icon-khlx{/*璇惧悗缁冧範*/
+	background:url('icons/271.png') no-repeat;
+}
+.icon-kjck{/*璇句欢鏌ョ湅*/
+	background:url('icons/173.png') no-repeat;
+}
+.icon-pm{/*鎺掑�*/
+	background:url('icons/248.png') no-repeat;
+}
+.icon-audit{/*瀹℃�*/
+	background: url(icons/audit.png) no-repeat;
+}
+.icon-first{/*绗竴椤�锟�*/
+	background: url(default/images/pagination_first.gif) no-repeat;
+}
+.icon-prev{/*鍓嶄竴椤�锟�*/
+	background: url(default/images/pagination_prev.gif) no-repeat;
+}
+
+.icon-last{/*鏈�锟�鍚庝竴椤�锟�*/
+	background: url(default/images/pagination_last.gif) no-repeat;
+}
+.icon-next{/*涓嬩竴椤�锟�*/
+	background: url(default/images/pagination_next.gif) no-repeat;
+}
+.icon-sys{/*系统锟斤拷锟斤拷*/
+	background: url(icons/monitor.png) no-repeat;
+}
+.icon-system{/*系统锟斤拷锟斤拷*/
+	background: url(icons/monitor.png) no-repeat;
+}
+.icon-customer{/*锟斤拷锟桔癸拷锟斤拷*/
+	background: url(icons/report_user.png) no-repeat;
+}
+.icon-project{/*锟斤拷目锟斤拷锟斤拷*/
+	background: url(icons/mod.png) no-repeat;
+}
+.icon-service{/*锟桔猴拷锟斤拷锟�*
+	background: url(/ITMAG/css/JQueryUI/themes/tel.png) no-repeat;
+}
+.icon-business{/*锟斤拷锟斤拷锟斤拷锟�*
+	background: url(icons/invoice.png) no-repeat;
+}
+.icon-budget{/*预锟斤拷锟斤拷锟�*
+	background: url(icons/coins.png) no-repeat;
+}
+.icon-person{/*锟斤拷锟斤拷锟斤拷源*/
+	background: url(icons/user.png) no-repeat;
+}
+.icon-assets{/*锟斤拷锟斤拷锟斤拷锟斤拷*/
+	background: url(icons/paste_plain.gif) no-repeat;
+}
+.icon-statistics{/*锟斤拷锟斤拷锟斤�*/
+	background: url(icons/chart_bar_edit.png) no-repeat;
+}
+.icon-performance{/*锟揭的癸拷锟斤拷*/
+	background: url(icons/table_multiple.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-zsgl{/*鎷涚敓绠＄悊鍥捐�*/
+	background: url(icons/zhaoshengguanli.png) no-repeat;
+}
+.icon-lqtz{/*褰曞彇閫氱煡鍥捐�*/
+	background: url(icons/luqutongzhi.png) no-repeat;
+}
+.icon-lqxx{/*褰曞彇淇℃伅鍥捐�*/
+	background: url(icons/luquxinxi.png) no-repeat;
+}
+.icon-yjxf{/*閭瘎淇″皝鍥捐�*/
+	background: url(icons/youjianxinfeng.png) no-repeat;
+}
+.icon-yybm{/*棰勭害鎶ュ悕鍥捐�*/
+	background: url(icons/yuyuebaoming.png) no-repeat;
+}
+.icon-zsfa{/*鎷涚敓鏂规鍥捐�*/
+	background: url(icons/zhaoshengfangan.png) no-repeat;
+}
+.icon-zshz{/*鎷涚敓姹囨�鍥捐�*/
+	background: url(icons/zhaoshenghuizong.png) no-repeat;
+}
+.icon-zsjh{/*鎷涚敓璁″垝鍥捐�*/
+	background: url(icons/zhaoshengjihua.png) no-repeat;
+}
+.icon-zslq{/*鎷涚敓褰曞彇鍥捐�*/
+	background: url(icons/zhaoshengluqu.png) no-repeat;
+}
+.icon-zswz{/*鎷涚敓缃戠珯鍥捐�*/
+	background: url(icons/zhaoshengwangzhan.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-gxjt{/*宸ュ浜ゆ浛鍥捐�*/
+	background: url(icons/gongxuejiaoti.png) no-repeat;
+}
+.icon-pyap{/*鍩瑰吇�*夋帓鍥捐�*/
+	background: url(icons/peiyanganpai.png) no-repeat;
+}
+.icon-pyxy{/*鍩瑰吇鍗忚鍥捐�*/
+	background: url(icons/peiyangxieyi.png) no-repeat;
+}
+.icon-sgap{/*涓婂矖�*夋帓鍥捐�*/
+	background: url(icons/shangganganpai.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-jygl{/*灏变笟绠＄悊鍥捐�*/
+	background: url(icons/jiuyeguanli.png) no-repeat;
+}
+.icon-bygz{/*姣曚笟璺熻釜鍥捐�*/
+	background: url(icons/biyegenzhong.png) no-repeat;
+}
+.icon-bytj{/*姣曚笟缁熻鍥捐�*/
+	background: url(icons/biyetongji.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-sxgl{/*瀹炰範绠＄悊鍥捐�*/
+	background: url(icons/shixiguanli.png) no-repeat;
+}
+.icon-bjxsqxhz{/*鐝骇�*︾敓鍘诲悜姹囨�鍥捐�*/
+	background: url(icons/banjixueshengquxianghuizhong.png) no-repeat;
+}
+.icon-fxqk{/*杩旀牎鎯呭喌鍥捐�*/
+	background: url(icons/fanxiaoqingk.png) no-repeat;
+}
+.icon-sxapb{/*瀹炰範�*夋帓琛ㄥ浘琛�*/
+	background: url(icons/shixianpaibiao.png) no-repeat;
+}
+.icon-sxdjb{/*瀹炰範鐧昏琛ㄥ浘琛�*/
+	background: url(icons/shixidengjibiao.png) no-repeat;
+}
+.icon-sxgz{/*瀹炰範璺熻釜鍥捐�*/
+	background: url(icons/shixingenzhong.png) no-repeat;
+}
+.icon-sxwj{/*瀹炰範鏂囦欢鍥捐�*/
+	background: url(icons/shixiwenjian.png) no-repeat;
+}
+.icon-yrdwhz{/*鐢ㄤ汉鍗曚綅姹囨�鍥捐�**/
+	background: url(icons/yongrendanweihuizhong.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-xtgl{/*绯荤粺绠＄悊鍥捐�*/
+	background: url(icons/xitongguanli.png) no-repeat;
+}
+.icon-bmgl{/*閮ㄩ棬绠＄悊鍥捐�*/
+	background: url(icons/bumenguanli.png) no-repeat;
+}
+.icon-cssz{/*鍙傛暟璁剧疆鍥捐�*/
+	background: url(icons/canshushezhi.png) no-repeat;
+}
+.icon-drsy{/*瀵煎叆鐢熸簮鍥捐�*/
+	background: url(icons/daorushengyuan.png) no-repeat;
+}
+.icon-gxjtdw{/*宸ュ浜ゆ浛鍗曚綅鍥捐�**/
+	background: url(icons/gongxuejiaotidanwei.png) no-repeat;
+}
+.icon-jsgl{/*瑙掕壊绠＄悊鍥捐�*/
+	background: url(icons/jiaoseguanli.png) no-repeat;
+}
+.icon-mmxg{/*瀵嗙爜淇敼鍥捐�*/
+	background: url(icons/mimaxiugai.png) no-repeat;
+}
+.icon-ndzszy{/*骞村害鎷涚敓涓撲笟鍥捐�**/
+	background: url(icons/nianduzhaoshengzhuanye.png) no-repeat;
+}
+.icon-qxdxsz{/*鏉冮檺�*硅薄璁剧疆鍥捐�**/
+	background: url(icons/quanxianduixiangshezhi.png) no-repeat;
+}
+.icon-qxgl{/*鏉冮檺绠＄悊鍥捐�*/
+	background: url(icons/quanxianguanli.png) no-repeat;
+}
+.icon-qxlbsz{/*鏉冮檺绫诲埆璁剧疆鍥捐�**/
+	background: url(icons/quanxianleibieshezhi.png) no-repeat;
+}
+.icon-rygl{/*浜哄憳绠＄悊鍥捐�*/
+	background: url(icons/renyuanguanli.png) no-repeat;
+}
+.icon-ryssbmgl{/*浜哄憳鎵�睘閮ㄩ棬绠＄悊鍥捐�*/
+	background: url(icons/renyuanshushubumenuanli.png) no-repeat;
+}
+.icon-ryssjsgl{/*浜哄憳鎵�睘瑙掕壊绠＄悊鍥捐�*/
+	background: url(icons/renyuansuoshujiaoseguanli.png) no-repeat;
+}
+.icon-sxdw{/*瀹炰範鍗曚綅鍥捐�*/
+	background: url(icons/shixidanwei.png) no-repeat;
+}
+.icon-sjqxsz{/*鏁版嵁鏉冮檺璁剧疆鍥捐�**/
+	background: url(icons/shujuquanxianshezhi.png) no-repeat;
+}
+.icon-yysz{/*搴旂敤璁剧疆鍥捐�*/
+	background: url(icons/yingyongshezhi.png) no-repeat;
+}
+.icon-zsfsd{/*鎷涚敓鍒嗘暟娈靛浘琛�*/
+	background: url(icons/zhaoshengfenshuduan.png) no-repeat;
+}
+.icon-zsqx{/*鎷涚敓鍖哄幙鍥捐�*/
+	background: url(icons/zhaoshengquxian.png) no-repeat;
+}
+/* --------------------------------------------------- */
+/*涓鸿В鍐冲綋椤圭洰涓嚭鐜颁笁绾ц彍鍗曟爮锛屾鑿滃崟鏍忕殑鑳屾櫙涓虹豢鑹诧紝浣嗗疄闄呰姹備笉鍑虹幇缁胯壊鑳屾�*/
+.icon-exp{
+	background:url('icons/exp.png') no-repeat 3px 2px;
+}
+.icon-return{
+	background:url('icons/return.png') no-repeat 3px 2px;
+}
+.icon-uploadpic{
+	background:url('icons/image_add.png') no-repeat 3px 2px;
+}
+.icon-elcTime{
+	background:url('icons/peiyanganpai.png') no-repeat 3px 2px;
+}
+.icon-collection_edit{
+	background:url('icons/collection_edit.png') no-repeat 3px 2px;
+}
+.icon-unlock{
+	background:url('icons/unlock.png') no-repeat center center;
+}
+.icon-arrow_left{
+	background:url('icons/arrow_left.png') no-repeat center center;
+}
+.icon-arrow_right{
+	background:url('icons/arrow_right.png') no-repeat center center;
+}
+
+.icon-new{	/*新建*/
+	background:url('icons/new.gif') no-repeat;
+}
+.icon-add{/*添加*/
+	background:url('icons/edit_add.png') no-repeat;
+}
+.icon-edit{/*编辑*/
+	background:url('icons/pencil.png') no-repeat;
+}
+.icon-remove{	/*移除*/
+	background:url('icons/edit_remove.png') no-repeat;
+}
+.icon-save{	/*保存*/
+	background:url('icons/filesave.png') no-repeat;
+}
+.icon-cut{	/*剪切*/
+	background:url('icons/cut.png') no-repeat;
+}
+.icon-submit{	/*提交*/
+	background: url(icons/plan_go.png) no-repeat;
+}
+.icon-download{	/*下载*/
+	background:url('icons/85.png') no-repeat;
+}
+.icon-ok{	/*确认*/
+	background:url('icons/ok.png') no-repeat;
+}
+.icon-no{	/*否决*/
+	background:url('icons/no.png') no-repeat;
+}
+.icon-cancel{	/*取消*/
+	background:url('icons/cancel.png') no-repeat;
+}
+.icon-reload{	/*刷新*/
+	background:url('icons/reload.png') no-repeat;
+}
+.icon-search{	/*查找*/
+	background:url('icons/search.png') no-repeat;
+}
+.icon-print{	/*打印*/
+	background:url('icons/print.png') no-repeat;
+}
+.icon-help{	/*帮助*/
+	background:url('icons/help.png') no-repeat;
+}
+
+.icon-undo{	/*向前撤销*/
+	background:url('icons/undo.png') no-repeat;
+}
+.icon-redo{	/*向后撤销*/
+	background:url('icons/redo.png') no-repeat;
+}
+.icon-back{	/*返回*/
+	background:url('icons/back.png') no-repeat;
+}
+.icon-site{	/*设置*/
+	background:url('icons/279.png') no-repeat;
+}
+.icon-jx{/*教学*/
+	background:url('icons/4.png') no-repeat;
+}
+.icon-sx{/*实训*/
+	background:url('icons/238.png') no-repeat;
+}
+.icon-zhsx{/*综合实训*/
+	background:url('icons/320.png') no-repeat;
+}
+.icon-newsx{/*新实讄1�7*/
+	background:url('icons/143.png') no-repeat;
+}
+.icon-resx{/*继续上次实训*/
+	background:url('icons/155.png') no-repeat;
+}
+.icon-rwsm{/*任务说明*/
+	background:url('icons/279.png') no-repeat;
+}
+.icon-df{/*得分查看*/
+	background:url('icons/106.png') no-repeat;
+}
+.icon-begin{/*弄1�7姄1�7*/
+	background:url('icons/561.png') no-repeat;
+}
+.icon-end{/*结束*/
+	background:url('icons/597.png') no-repeat;
+}
+.icon-zy{/*作业情况*/
+	background:url('icons/299.png') no-repeat;
+}
+.icon-hd{/*互动*/
+	background:url('icons/199.png') no-repeat;
+}
+.icon-pj{/*评价*/
+	background:url('icons/549.png') no-repeat;
+}
+.icon-sk{/*上课*/
+	background:url('icons/280.png') no-repeat;
+}
+.icon-bf{/*播放*/
+	background:url('icons/bf.png') no-repeat;
+}
+.icon-pd{/*启动*/
+	background:url('icons/206.png') no-repeat;
+}
+.icon-ktlx{/*弄1�7始课堂练乄1�7*/
+	background:url('icons/174.png') no-repeat;
+}
+.icon-lb{/*录播*/
+	background:url('icons/63.png') no-repeat;
+}
+.icon-finish{/*已完戄1�7*/
+	background:url('icons/114.png') no-repeat;
+}
+.icon-unfinish{/*未完戄1�7*/
+	background:url('icons/544.png') no-repeat;
+}
+.icon-ktlx{/*课堂练习*/
+	background:url('icons/174.png') no-repeat;
+}
+.icon-khlx{/*课后练习*/
+	background:url('icons/271.png') no-repeat;
+}
+.icon-up{/*上传*/
+	background:url('icons/271.png') no-repeat;
+}
+.icon-kjck{/*课件查看*/
+	background:url('icons/173.png') no-repeat;
+}
+.icon-pm{/*排名*/
+	background:url('icons/248.png') no-repeat;
+}
+.icon-audit{/*审核*/
+	background: url(icons/audit.png) no-repeat;
+}
+.icon-first{/*第一顄1�7*/
+	background: url(default/images/pagination_first.gif) no-repeat;
+}
+.icon-prev{/*前一顄1�7*/
+	background: url(default/images/pagination_prev.gif) no-repeat;
+}
+
+.icon-last{/*朄1�7后一顄1�7*/
+	background: url(default/images/pagination_last.gif) no-repeat;
+}
+.icon-next{/*下一顄1�7*/
+	background: url(default/images/pagination_next.gif) no-repeat;
+}
+.icon-sys{/*ϵͳ����*/
+	background: url(icons/monitor.png) no-repeat;
+}
+.icon-system{/*ϵͳ����*/
+	background: url(icons/monitor.png) no-repeat;
+}
+.icon-customer{/*���۹���*/
+	background: url(icons/report_user.png) no-repeat;
+}
+.icon-project{/*��Ŀ����*/
+	background: url(icons/mod.png) no-repeat;
+}
+.icon-service{/*�ۺ����*/
+	background: url(/ITMAG/css/JQueryUI/themes/tel.png) no-repeat;
+}
+.icon-business{/*�������*/
+	background: url(icons/invoice.png) no-repeat;
+}
+.icon-budget{/*Ԥ�����*/
+	background: url(icons/coins.png) no-repeat;
+}
+.icon-person{/*������Դ*/
+	background: url(icons/user.png) no-repeat;
+}
+.icon-assets{/*��������*/
+	background: url(icons/paste_plain.gif) no-repeat;
+}
+.icon-statistics{/*������*/
+	background: url(icons/chart_bar_edit.png) no-repeat;
+}
+.icon-performance{/*�ҵĹ���*/
+	background: url(icons/table_multiple.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-zsgl{/*招生管理图表*/
+	background: url(icons/zhaoshengguanli.png) no-repeat;
+}
+.icon-lqtz{/*录取通知图表*/
+	background: url(icons/luqutongzhi.png) no-repeat;
+}
+.icon-lqxx{/*录取信息图表*/
+	background: url(icons/luquxinxi.png) no-repeat;
+}
+.icon-yjxf{/*邮寄信封图表*/
+	background: url(icons/youjianxinfeng.png) no-repeat;
+}
+.icon-yybm{/*预约报名图表*/
+	background: url(icons/yuyuebaoming.png) no-repeat;
+}
+.icon-zsfa{/*招生方案图表*/
+	background: url(icons/zhaoshengfangan.png) no-repeat;
+}
+.icon-zshz{/*招生汇总图表*/
+	background: url(icons/zhaoshenghuizong.png) no-repeat;
+}
+.icon-zsjh{/*招生计划图表*/
+	background: url(icons/zhaoshengjihua.png) no-repeat;
+}
+.icon-zslq{/*招生录取图表*/
+	background: url(icons/zhaoshengluqu.png) no-repeat;
+}
+.icon-zswz{/*招生网站图表*/
+	background: url(icons/zhaoshengwangzhan.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-gxjt{/*工学交替图表*/
+	background: url(icons/gongxuejiaoti.png) no-repeat;
+}
+.icon-pyap{/*培养安排图表*/
+	background: url(icons/peiyanganpai.png) no-repeat;
+}
+.icon-pyxy{/*培养协议图表*/
+	background: url(icons/peiyangxieyi.png) no-repeat;
+}
+.icon-sgap{/*上岗安排图表*/
+	background: url(icons/shangganganpai.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-jygl{/*就业管理图表*/
+	background: url(icons/jiuyeguanli.png) no-repeat;
+}
+.icon-bygz{/*毕业跟踪图表*/
+	background: url(icons/biyegenzhong.png) no-repeat;
+}
+.icon-bytj{/*毕业统计图表*/
+	background: url(icons/biyetongji.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-sxgl{/*实习管理图表*/
+	background: url(icons/shixiguanli.png) no-repeat;
+}
+.icon-bjxsqxhz{/*班级学生去向汇总图表*/
+	background: url(icons/banjixueshengquxianghuizhong.png) no-repeat;
+}
+.icon-fxqk{/*返校情况图表*/
+	background: url(icons/fanxiaoqingk.png) no-repeat;
+}
+.icon-sxapb{/*实习安排表图表*/
+	background: url(icons/shixianpaibiao.png) no-repeat;
+}
+.icon-sxdjb{/*实习登记表图表*/
+	background: url(icons/shixidengjibiao.png) no-repeat;
+}
+.icon-sxgz{/*实习跟踪图表*/
+	background: url(icons/shixingenzhong.png) no-repeat;
+}
+.icon-sxwj{/*实习文件图表*/
+	background: url(icons/shixiwenjian.png) no-repeat;
+}
+.icon-yrdwhz{/*用人单位汇总图表*/
+	background: url(icons/yongrendanweihuizhong.png) no-repeat;
+}
+/* --------------------------------------------------- */
+.icon-xtgl{/*系统管理图表*/
+	background: url(icons/xitongguanli.png) no-repeat;
+}
+.icon-bmgl{/*部门管理图表*/
+	background: url(icons/bumenguanli.png) no-repeat;
+}
+.icon-cssz{/*参数设置图表*/
+	background: url(icons/canshushezhi.png) no-repeat;
+}
+.icon-drsy{/*导入生源图表*/
+	background: url(icons/daorushengyuan.png) no-repeat;
+}
+.icon-gxjtdw{/*工学交替单位图表*/
+	background: url(icons/gongxuejiaotidanwei.png) no-repeat;
+}
+.icon-jsgl{/*角色管理图表*/
+	background: url(icons/jiaoseguanli.png) no-repeat;
+}
+.icon-mmxg{/*密码修改图表*/
+	background: url(icons/mimaxiugai.png) no-repeat;
+}
+.icon-ndzszy{/*年度招生专业图表*/
+	background: url(icons/nianduzhaoshengzhuanye.png) no-repeat;
+}
+.icon-qxdxsz{/*权限对象设置图表*/
+	background: url(icons/quanxianduixiangshezhi.png) no-repeat;
+}
+.icon-qxgl{/*权限管理图表*/
+	background: url(icons/quanxianguanli.png) no-repeat;
+}
+.icon-qxlbsz{/*权限类别设置图表*/
+	background: url(icons/quanxianleibieshezhi.png) no-repeat;
+}
+.icon-rygl{/*人员管理图表*/
+	background: url(icons/renyuanguanli.png) no-repeat;
+}
+.icon-ryssbmgl{/*人员所属部门管理图表*/
+	background: url(icons/renyuanshushubumenuanli.png) no-repeat;
+}
+.icon-ryssjsgl{/*人员所属角色管理图表*/
+	background: url(icons/renyuansuoshujiaoseguanli.png) no-repeat;
+}
+.icon-sxdw{/*实习单位图表*/
+	background: url(icons/shixidanwei.png) no-repeat;
+}
+.icon-sjqxsz{/*数据权限设置图表*/
+	background: url(icons/shujuquanxianshezhi.png) no-repeat;
+}
+.icon-yysz{/*应用设置图表*/
+	background: url(icons/yingyongshezhi.png) no-repeat;
+}
+.icon-zsfsd{/*招生分数段图表*/
+	background: url(icons/zhaoshengfenshuduan.png) no-repeat;
+}
+.icon-zsqx{/*招生区县图表*/
+	background: url(icons/zhaoshengquxian.png) no-repeat;
+}
+/* --------------------------------------------------- */
+/*为解决当项目中出现三级菜单栏，此菜单栏的背景为绿色，但实际要求不出现绿色背景*/
+.icon-exp{
+	background:url('icons/exp.png') no-repeat 3px 2px;
+}

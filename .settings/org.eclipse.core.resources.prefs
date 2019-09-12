@@ -1,0 +1,12 @@
+eclipse.preferences.version=1
+encoding//WebRoot/Welcome.jsp=UTF-8
+encoding//WebRoot/base/config/BaseConfig.jsp=UTF-8
+encoding//WebRoot/css/homePageStyle.css=UTF-8
+encoding//WebRoot/css/themes/icon.css=UTF-8
+encoding//WebRoot/form/ruleManage/majorSetList.jsp=UTF-8
+encoding//WebRoot/homePage.jsp=UTF-8
+encoding//WebRoot/properties/Base.properties=UTF-8
+encoding//WebRoot/properties/msg.properties=UTF-8
+encoding//src/com/pantech/base/common/audit/AuditconfigBean.java=UTF-8
+encoding//src/com/pantech/base/common/audit/AuditeditBean.java=UTF-8
+encoding/<project>=UTF-8

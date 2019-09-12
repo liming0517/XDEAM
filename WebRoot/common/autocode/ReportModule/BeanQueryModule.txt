@@ -1,0 +1,391 @@
+package {PackageName};
+
+import java.sql.SQLException;
+import java.util.Vector;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import com.pantech.base.common.db.DBSource;
+import com.pantech.base.common.exception.WrongSQLException;
+import com.pantech.base.common.tools.MyTools;
+import com.pantech.base.common.tools.TraceLog;
+
+
+/**
+ * @version 	1.0
+ * @author {Author}
+ * 创建日期 {CreateDate}
+ * 功能：{FunctionCName}({FunctionEName})
+ */
+public class {FunctionEName}QueryBean extends {FunctionEName}Bean {
+	
+	private String sqlstate;//SQL语句存放
+	private String queryFields;//查询字段
+	private String displayFields;//显示列表字段
+	private int SqlColumn;
+	private String AreaName;//区域变量
+	private String MinServFee;//最小费用
+	private String MaxServFee;//最大费用
+	/**
+	* 初始化构造方法
+	*/
+	public {FunctionEName}QueryBean(){
+		super();//调用父类构造
+		initParameter();
+	}
+	
+	/**
+	* 初始化变量
+	*/
+	public void initParameter(){
+		sqlstate="";
+		queryFields="{QueryFields}";
+		displayFields="{DisFields}";
+	}
+
+	/**
+	* 函数功能：返回一个统计用的SQL语句
+	* 参数说明：
+	* AreaCode-------------------代表区域编号
+	* sqlquery-------------------代表查询结果
+	* Condition------------------代表查询条件
+	* sqlHaving------------------代表HAVING条件
+	*/
+	public String getSql(Vector AreaCode,String sqlquery,String Condition,String sqlHaving){
+		String sql = "";
+		String sqltemp = "";
+		String sqlGridding = "";
+		String sqlDept = "";
+		String GriddingWhere = "";
+		String DeptWhere = "";
+		String sqlUnion = "";
+		
+		TraceLog.Trace("the having value is====================" + sqlHaving);
+		
+		for(int i = 0; i < AreaCode.size(); i +=2){
+			GriddingWhere = " AND 网格编号 = '" + AreaCode.get(i).toString() + "' ";
+			//定义网格内全部的统计数据
+			sqlGridding = "SELECT 网格名称," + 
+						sqlquery + " " +
+						"FROM {TableName} " + 
+						"WHERE 1=1 " + GriddingWhere + Condition + " " + 
+						"GROUP BY 网格名称 " + 
+						"HAVING 1=1 " + sqlHaving;
+							
+			//拼接SQL语句			
+			if("".equals(sql)){
+				sql = sqlGridding;
+			} else {
+				sql = sql + " UNION " + sqlGridding;
+			}
+			
+			if(!AreaCode.get(i+1).toString().equals("")){
+				sqlDept = " AND 居委编号 IN (" + AreaCode.get(i+1).toString() + ") ";
+				//定义居委内全部的统计数据
+				sqlDept = "SELECT 居委名称," + 
+						sqlquery + " " +
+						"FROM {TableName} " + 
+						"WHERE 1=1 " + sqlDept +  Condition + " " +
+						"GROUP BY 居委名称 " + 
+						"HAVING 1=1 " + sqlHaving;	
+							
+				if("".equals(sql)){
+					sql = sqlDept;				
+				} else {
+					sql = sql + " UNION " + sqlDept;
+				}				
+			}			
+		}
+		
+		sqltemp = "SELECT '属地外' AS 属地外," + 
+					sqlquery + " " +
+					"FROM {TableName} " + 
+					"WHERE 1=1 AND 居委编号 IS NULL " + Condition + " " +
+					"GROUP BY 网格名称 " + 
+					"HAVING 1=1 " + sqlHaving;
+							
+		if("".equals(sql)){
+			sql = sqltemp;
+		} else {
+			sql = sql + " UNION " + sqltemp;
+		}
+		
+		sqltemp = "SELECT '总计' AS 总计," + 
+					sqlquery + " " +
+					"FROM {TableName} " + 
+					"WHERE 1=1 " + Condition + " " +
+					"HAVING 1=1 " + sqlHaving;
+		if("".equals(sql)){
+			sql = sqltemp;
+		} else {
+			sql = sql + " UNION " + sqltemp;
+		}
+		return sql;
+	}
+
+	/**
+	* 函数功能：动态生成列标题
+	* 参数说明：
+	* ServName-------------------服务类别	
+	*/
+	public String getTrVal(Vector ServName){
+		String strTrVal = "";
+		strTrVal = "<tr class='fieldbg'>";
+		strTrVal = strTrVal + "<td align='right'>项目</td>";
+		for(int i = 0; i < ServName.size(); i ++){
+		//===================[自动化]colspan========================
+			strTrVal = strTrVal + "<td colspan='4' align='center'>" + ServName.get(i).toString() + "</td>";			
+		//---------------------------------------------------------
+		}
+		strTrVal = strTrVal + "</tr>";
+		
+		strTrVal = strTrVal + "<tr class='fieldbg'>";
+		strTrVal = strTrVal + "<td>区域</td>";
+		for(int i = 0; i < ServName.size(); i ++){
+		//===================[自动化]标题列名========================
+			strTrVal = strTrVal + "<td>社区团队数</td>";
+			strTrVal = strTrVal + "<td>社区活动数</td>";
+			strTrVal = strTrVal + "<td>参加人次</td>";
+			strTrVal = strTrVal + "<td>服务费用</td>";
+		//---------------------------------------------------------
+		}
+		strTrVal = strTrVal + "</tr>";
+
+		return strTrVal;
+	}
+
+	/**
+	* 函数功能：动态生成条件
+	* 参数说明：
+	* MinNum------------------------代表最小人数
+	* MaxNum------------------------代表最大人数
+	* ServType----------------------服务类别
+	*/
+	public String getSqlHaving(String MinNum,String MaxNum,String ServType){
+		String sql = "";
+		if(!"".equals(MinNum) && MinNum != null){
+			sql = sql + " AND SUM((CASE WHEN 服务类别='" + ServType + "' THEN 政府补贴 ELSE 0 END))>" + MyTools.fixSql(MinNum);
+		}
+		if(!"".equals(MaxNum) && MaxNum != null){
+			sql = sql + " AND SUM((CASE WHEN 服务类别='" + ServType + "' THEN 政府补贴 ELSE 0 END))<" + MyTools.fixSql(MaxNum);
+		}		
+		return sql;
+	}
+
+	/**
+	 * 获取查询结果集
+	 * 参数 页数（默认第一页）
+	 * @return ArrayList
+	 */
+	public Vector get{FunctionEName}Query() throws SQLException{
+		Vector v=new Vector();
+		String sqlHaving = "";
+		String tempSql="";
+		String sqlArea = "";
+		String sqlServName = "";
+		String strTrValue = "";
+		String sqlquery = "";
+		Vector vecArea = new Vector();
+		Vector vecAreaTemp = new Vector();
+		Vector vecServTemp = new Vector();
+		Vector vecServName = new Vector();
+		String sqlself = "";
+
+		tempSql="select " + displayFields + " from {TableName} where 1=1";
+		//查询条件处理
+		String Condition="";
+		{loop}if(!this.get{QfieldsEName}().equals("")){Condition += " and {FieldsQueryCondition}";}
+		{loopend}
+		
+		TraceLog.Trace("Query sql in {ReportCommunityQueryBean}==" + sqlstate);
+		DBSource db=new DBSource();
+		
+		//-----------------------------生成各服务类别的统计数据-----------------------------//
+		int tmpnum = 1;
+		if(!this.getServName().equals("")){
+			vecServName = MyTools.splitStrToVector(this.getServName(),",");
+			TraceLog.Trace("the vecServName is====================" + vecServName.size());
+			
+			for(int i=0; i<vecServName.size();i++){
+				if("".equals(sqlquery)){
+					sqlquery = "COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50), 社团编号) ELSE NULL END)) AS 团队数量" + vecServName.get(i).toString() + "," +
+								"COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50),服务者) ELSE NULL END)) AS 活动数量" + vecServName.get(i).toString() + "," +
+								"COUNT((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 服务号 ELSE NULL END)) AS 参加人次" + vecServName.get(i).toString() + "," +
+								"SUM((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 政府补贴 ELSE 0 END)) AS 政府补贴" + vecServName.get(i).toString();
+								
+								//添加服务费用HAVING条件
+					sqlHaving = sqlHaving + getSqlHaving(this.getMinServFee(),this.getMinServFee(),vecServName.get(i).toString());
+				} else {
+					sqlquery = sqlquery + "," + "COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50), 社团编号) ELSE NULL END)) AS 团队数量" + vecServName.get(i).toString() + "," +
+						"COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50),服务者) ELSE NULL END)) AS 活动数量" + vecServName.get(i).toString() + "," +
+						"COUNT((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 服务号 ELSE NULL END)) AS 参加人次" + vecServName.get(i).toString() + "," +
+						"SUM((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 政府补贴 ELSE 0 END)) AS 政府补贴" + vecServName.get(i).toString();
+						
+					sqlHaving = sqlHaving + getSqlHaving(this.getMinServFee(),this.getMaxServFee(),vecServName.get(i).toString());
+				}
+					
+				//计算字段总数
+				tmpnum = tmpnum + 4;
+			}
+				
+				//将字段总数存放入一个变量中
+				this.setSqlColumn(tmpnum);				
+		} else {
+			sqlServName = "SELECT DISTINCT 服务类别 FROM {TableName}";
+			vecServName = db.GetContextVector(sqlServName);
+			for(int i=0; i<vecServName.size();i++){
+				if("".equals(sqlquery)){
+					sqlquery = "COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50), 社团编号) ELSE NULL END)) AS 团队数量" + vecServName.get(i).toString() + "," +
+							"COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50),服务者) ELSE NULL END)) AS 活动数量" + vecServName.get(i).toString() + "," +
+							"COUNT((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 服务号 ELSE NULL END)) AS 参加人次" + vecServName.get(i).toString() + "," +
+							"SUM((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 政府补贴 ELSE 0 END)) AS 政府补贴" + vecServName.get(i).toString();
+									
+					sqlHaving = sqlHaving + getSqlHaving(this.getMinServFee(),this.getMaxServFee(),vecServName.get(i).toString());
+				} else {
+					sqlquery = sqlquery + "," + "COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50), 社团编号) ELSE NULL END)) AS 团队数量" + vecServName.get(i).toString() + "," +
+						"COUNT(DISTINCT (CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN CONVERT(VARCHAR(50),服务者) ELSE NULL END)) AS 活动数量" + vecServName.get(i).toString() + "," +
+						"COUNT((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 服务号 ELSE NULL END)) AS 参加人次" + vecServName.get(i).toString() + "," +
+						"SUM((CASE WHEN 服务类别='" + vecServName.get(i).toString() + "' THEN 政府补贴 ELSE 0 END)) AS 政府补贴" + vecServName.get(i).toString();
+						
+					sqlHaving = sqlHaving + getSqlHaving(this.getMinServFee(),this.getMaxServFee(),vecServName.get(i).toString());
+				}
+				tmpnum = tmpnum + 4;
+			}
+			this.setSqlColumn(tmpnum);
+		}
+		//-----------------------------生成各服务类别的统计数据-----------------------------//
+
+		//-----------------------------生成统计报表结果集，按区域划分-----------------------------//
+		//定义bean方法的对象
+		Cls_ReportFunctions rf = new Cls_ReportFunctions();
+		//判断传入的区域变量是否为空
+		if(!"".equals(this.getAreaName())){
+			//如果不为空，则只要将传入的变量送入bean方法的函数中即可。
+			TraceLog.Trace("the areaname value is=========================" + this.getAreaName());
+			vecArea = rf.RegenerateArea(this.getAreaName());
+		} else {
+			//如果为空，则必须从2005-7-14数据表中取出全部的部门编号，然后再送入bean方法的函数中。
+			String strTemp = rf.GetDeptList();
+			vecArea = rf.RegenerateArea(strTemp);
+		}
+
+		if(vecArea.size()>0 && vecArea != null){
+			sqlself = this.getSql(vecArea,sqlquery,Condition,sqlHaving);
+		}
+			
+		sqlstate = sqlself;
+		TraceLog.Trace("the new sql is==========[" + sqlself + "]");
+		//-----------------------------生成统计报表结果集，按区域划分-----------------------------//
+		try {
+			v=db.GetContextVector(sqlstate);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return v;
+	}
+	
+	/**
+	 * 获取列表字段
+	 * @return
+	 */
+	public String getDisplayFields() {
+		return displayFields;
+	}
+
+	/**
+	 * 获取查询字段
+	 * @return
+	 */
+	public String getQueryFields() {
+		return queryFields;
+	}
+
+	/**
+	 * 获取SQL语句
+	 * @return
+	 */
+	public String getSqlstate() {
+		return sqlstate;
+	}
+
+	/**
+	 * 设置列表字段
+	 * @param string
+	 */
+	public void setDisplayFields(String string) {
+		displayFields = string;
+	}
+
+	/**
+	 * 设置查询字段
+	 * @param string
+	 */
+	public void setQueryFields(String string) {
+		queryFields = string;
+	}
+
+	/**
+	 * 设置SQL语句
+	 * @param string
+	 */
+	public void setSqlstate(String string) {
+		sqlstate = string;
+	}
+
+	/**
+	* @return
+	*/
+	public int getSqlColumn() {
+		return SqlColumn;
+	}
+
+	/**
+	* @param string
+	*/
+	public void setSqlColumn(int i) {
+		SqlColumn = i;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getMaxServFee() {
+		return MaxServFee;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getMinServFee() {
+		return MinServFee;
+	}
+
+	/**
+	 * @param string
+	 */
+	public void setMaxServFee(String string) {
+		MaxServFee = string;
+	}
+
+	/**
+	 * @param string
+	 */
+	public void setMinServFee(String string) {
+		MinServFee = string;
+	}
+
+	/**
+	 * @return
+	 */
+	public String getAreaName() {
+		return AreaName;
+	}
+
+	/**
+	 * @param string
+	 */
+	public void setAreaName(String string) {
+		AreaName = string;
+	}
+}

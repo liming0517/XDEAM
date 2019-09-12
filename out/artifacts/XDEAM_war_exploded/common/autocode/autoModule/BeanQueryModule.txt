@@ -1,0 +1,113 @@
+package {PackageName};
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.pantech.base.common.db.DBSource;
+import com.pantech.base.common.tools.MyTools;
+import com.pantech.base.common.tools.TraceLog;
+
+
+/**
+ * @version 	1.0
+ * @author {Author}
+ * 创建日期 {CreateDate}
+ * 功能：{FunctionCName}({FunctionEName})
+ */
+public class {FunctionEName}QueryBean extends {FunctionEName}Bean {
+	
+	private String sqlstate;//SQL语句存放
+	private String queryFields;//查询字段
+	private String displayFields;//显示列表字段
+	
+	/**
+	* 初始化构造方法
+	*/
+	public {FunctionEName}QueryBean(HttpServletRequest req){
+		super(req);//调用父类构造
+		initParameter();
+	}
+	
+	/**
+	* 初始化变量
+	*/
+	public void initParameter(){
+		sqlstate="";
+		queryFields="{QueryFields}";
+		displayFields="{DisFields}";
+	}
+	
+	/**
+	 * 获取查询结果集
+	 * 参数 页数（默认第一页）
+	 * @return ArrayList
+	 */
+	public ArrayList get{FunctionEName}Query(String PageNum){
+		ArrayList arr=new ArrayList();
+		String tempSql="";
+		tempSql="select distinct " + displayFields + " from {TableName} where 1=1";
+		//查询条件处理
+		String Condition="";
+		{loop}if(!this.get{QfieldsEName}().equals("")){Condition += " and {FieldsQueryCondition}";}
+		{loopend}
+		
+		sqlstate=tempSql+Condition;
+		TraceLog.Trace("Query sql in {{FunctionEName}QueryBean}==" + sqlstate);
+		DBSource db=new DBSource(request);
+		try {
+			arr=db.getPageContext(sqlstate,PageNum);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return arr;
+	}
+	
+	/**
+	 * 获取列表字段
+	 * @return
+	 */
+	public String getDisplayFields() {
+		return displayFields;
+	}
+
+	/**
+	 * 获取查询字段
+	 * @return
+	 */
+	public String getQueryFields() {
+		return queryFields;
+	}
+
+	/**
+	 * 获取SQL语句
+	 * @return
+	 */
+	public String getSqlstate() {
+		return sqlstate;
+	}
+
+	/**
+	 * 设置列表字段
+	 * @param string
+	 */
+	public void setDisplayFields(String string) {
+		displayFields = string;
+	}
+
+	/**
+	 * 设置查询字段
+	 * @param string
+	 */
+	public void setQueryFields(String string) {
+		queryFields = string;
+	}
+
+	/**
+	 * 设置SQL语句
+	 * @param string
+	 */
+	public void setSqlstate(String string) {
+		sqlstate = string;
+	}
+
+}

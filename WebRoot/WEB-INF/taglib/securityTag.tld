@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+ "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>1.1</jsp-version>
+ <short-name>security</short-name>
+ <uri/>
+ <description>
+     access control!
+ </description>
+ 
+ <tag>
+  <name>securityForField</name>
+  <tag-class>com.pantech.base.common.tags.security.SecurityTagForField</tag-class>
+	  <attribute>
+		 <name>permissionID</name>
+		 <required>true</required>
+		 <rtexprvalue>true</rtexprvalue>
+	  </attribute>
+	  <attribute>
+	     <name>areaCode</name>
+	     <rtexprvalue>true</rtexprvalue>
+	  </attribute>
+ </tag>
+ 
+ <tag>
+  <name>securityForPage</name>
+  <tag-class>com.pantech.base.common.tags.security.SecurityTagForPage</tag-class>
+	  <attribute>
+	    <name>pagePermissionID</name>
+	    <required>true</required>
+	    <rtexprvalue>true</rtexprvalue>
+	  </attribute>
+ </tag>
+ 
+ 
+  <tag>
+  <!-- This is  the purView module tag , which used to show the users belong to the role or the department. -->
+  <name>showUser</name>
+  <tag-class>com.pantech.base.common.tags.security.PurviewTag</tag-class>
+	  <attribute>
+	    <name>code</name><!-- authCode or DeptCode -->
+	    <required>true</required>
+	    <rtexprvalue>true</rtexprvalue>
+	  </attribute>
+ </tag>
+</taglib>
